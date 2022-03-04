@@ -1,0 +1,11 @@
+# Mixed Autonomy Intersections
+This repo will contain the code, model checkpoints, and video results for the IEEE T-ASE submission *Unified Automatic Control of Vehicular Systems with Reinforcement Learning*. Necessary files for reproducibility will be provided after acceptance.
+
+## Installation
+Installation instructions are provided for MacOS and Ubuntu 14.04, 16.04, and 18.04. For microscopic traffic simulations, we use the SUMO simulator with version 1.1.0; the same code may require adjustments on other SUMO versions. We require Python 3.8+.
+1. Run `bash setup/setup_sumo_<os_version>.sh` corresponding to your OS version to set up SUMO and add `~/sumo_binaries/bin` to your `SUMO_HOME` and `PATH` environment variables. Try running `sumo` and `sumo-gui` (if you'd like to use GUI). Note that GUI probably does not work on servers and may only work on local computers. For Mac installation issues, please refer to `setup/setup_issues_osx.md`. **Update**: due to MacOS `brew` updates, it could be very difficult to install the correct versions of packages for SUMO 1.1.0 on MacOS, so Ubuntu is recommended; for MacOS, you may consider installing `gdal` with `conda install -c conda-forge gdal=2.4.2` and download the `ffmpeg=4.4.1` library files (within the `tar.bz2`) from [conda-forge](https://anaconda.org/conda-forge/ffmpeg/files?version=4.4.1) directly instead of trying to use `brew`.
+2. Note: the previous SUMO installation actually installs a SUMO version which does not support IDM with Gaussian noise. If you'd like to use Gaussian noise (which is what we use in the paper but does not significantly affect results), you can build the forked version of SUMO 1.1.0 at https://github.com/ZhongxiaYan/sumo.
+3. If needed, follow instructions [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) to install Miniconda, likely `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh` followed by `bash Miniconda3-latest-Linux-x86_64.sh`.
+4. If desired, create and activate a new conda environment following these [instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands).
+5. If needed, install PyTorch (1.7+) from [pytorch.org](pytorch.org).
+6. If needed, install missing Python dependencies `pip install -r requirements.txt`.
