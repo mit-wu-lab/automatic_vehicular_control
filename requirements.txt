@@ -1,0 +1,11 @@
+gym
+lxml
+ray
+traci
+pyyaml
+numpy
+scipy
+pandas
+matplotlib
+jupyter
+tensorboard
