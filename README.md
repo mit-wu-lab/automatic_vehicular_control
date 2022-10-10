@@ -1,5 +1,5 @@
 # Unified Automatic Control of Vehicular Systems With Reinforcement Learning
-This repo contains the code, model checkpoints, and video results for our IEEE T-ASE 2022 paper *Unified Automatic Control of Vehicular Systems with Reinforcement Learning*.
+This repo contains the code, model checkpoints, and video results for our IEEE T-ASE (presented at IROS 2022) paper *Unified Automatic Control of Vehicular Systems with Reinforcement Learning*.
 
 # Relevant Links
 You may find this project at: Project Website, [IEEE Website](https://ieeexplore.ieee.org/document/9765650), [arXiv](https://arxiv.org/abs/2208.00268).
@@ -89,6 +89,6 @@ $R (results)
 **Note that the training and evaluation commands are included in the zipped results directory detailed above.**
 
 # Training and Evaluation
-Given any experiment directory `$EXP_DIR` in the zipped results directory, run the commands in `$EXP_DIR/train_command.sh` and `$EXP_DIR/eval_commands.sh`, for training and evaluation.
+Given any experiment directory `$EXP_DIR` in the zipped results directory, run the commands in `$EXP_DIR/train_command.sh` and `$EXP_DIR/eval_commands.sh`, for training and evaluation. Training uses around 45-48 parallel workers for rollout collection, which should be adjusted accordingly based on computational budget.
 
 Note that Baseline and Derived are not learning-based, so there is no need to run training for them.
