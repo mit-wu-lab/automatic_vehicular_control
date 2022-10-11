@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Sirui Li">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Automatic Vehicular Control</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+
+
+    <!-- Bootstrap core CSS -->
+<link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      a { text-decoration: none; }
+    </style>
+
+
+  </head>
+  <body>
+<main>
+  <section class="py-5 container">
+    <div class="row py-lg-5">
+      <div class="col-lg-8 col-md-10 mx-auto text-center">
+        <h2 class="fw-light">Unified Automatic Control of Vehicular Systems With Reinforcement Learning</h2>
+        <br>
+        <p class="lead text-muted"> Zhongxia Yan, Abdul Rahman Kreidieh, Eugene Vinitsky, Alexandre Bayen, Cathy Wu</p>
+        <p class="lead text-muted">MIT, UC Berkeley</p>
+        <p class="lead text-muted"><b>IEEE T-ASE, IROS 2022</b></p>
+        <p class="lead text-muted"><a href="https://ieeexplore.ieee.org/document/9765650">IEEE</a> | <a href="https://arxiv.org/abs/2208.00268">arXiv</a> | <a href="https://github.com/mit-wu-lab/automatic_vehicular_control">Code (Github)</a></p>
+      </div>
+      <div class="col-lg-10 col-md-9 mx-auto text-center">
+        <figure>
+          <img src="img/overview.png"  class="img-fluid" alt="...">
+
+          <figcaption class="text-muted"><b>Overview of our deep reinforcement learning methdology for mixed autonomy multi-vehicle control.</b>
+            <br>
+            <b>a)</b> All vehicles have assigned routes towards destinations. A fraction of vehicles are centrally coordinated (red, "AV") towards a system objective while the rest (black) are uncontrolled. <b>b)</b> Each AV senses neighboring vehicles. <b>c)</b> A learned policy dictates accelerations and lane changes of each AV. Uncontrolled vehicles follow default driving behavior. <b>d)</b> States of all vehicles are updated accordingly.</figcaption>
+        </figure>
+        <br>
+        <br>
+        <figure>
+          <figcaption class="text-muted"><b>We demonstrate our methodology's generality to each of the six diverse vehicular scenarios below at varying vehicle densities.</b></figcaption>
+          <img src="img/traffic_systems.png"  class="img-fluid" alt="...">
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>
+          Emerging vehicular systems with increasing proportions of automated components present opportunities for optimal control to mitigate congestion and increase efficiency. There has been a recent interest in applying deep reinforcement learning (DRL) to these nonlinear dynamical systems for the automatic design of effective control strategies. Despite conceptual advantages of DRL being model-free, studies typically nonetheless rely on training setups that are painstakingly specialized to specific vehicular systems. This is a key challenge to efficient analysis of diverse vehicular and mobility systems. To this end, this article contributes a streamlined methodology for vehicular microsimulation and discovers high performance control strategies with minimal manual design. A variable-agent, multi-task approach is presented for optimization of vehicular Partially Observed Markov Decision Processes. The methodology is experimentally validated on mixed autonomy traffic systems, where fractions of vehicles are automated; empirical improvement, typically 15-60% over a human driving baseline, is observed in all configurations of six diverse open or closed traffic systems. The study reveals numerous emergent behaviors resembling wave mitigation, traffic signaling, and ramp metering. Finally, the emergent behaviors are analyzed to produce interpretable control strategies, which are validated against the learned control strategies.
+        </p>
+        <div class="card">
+          <div class="card-header">
+            Citation
+          </div>
+          <div class="card-body">
+            <pre>
+@article{yan2022unified,
+  title={Unified Automatic Control of Vehicular Systems With Reinforcement Learning},
+  author={Yan, Zhongxia and Kreidieh, Abdul Rahman and Vinitsky, Eugene and Bayen, Alexandre M and Wu, Cathy},
+  journal={IEEE Transactions on Automation Science and Engineering},
+  year={2022},
+  publisher={IEEE}
+}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row py-lg-5">
+    <div class="container">
+      <div class="col-lg-12 col-md-12 mx-auto">
+      <h3>Experimental Results</h3><br>
+      <p>For each vehicular scenario, we provide one or more time-space diagrams and videos detailing the behavior of AVs under a particular vehicular density, as well as generalization performance of the policy under a range of vehicle densities.</p>
+      <p>For all videos and time-space diagrams, the RL-learned control policy is initially <i>off</i>, then turns on (time 0 in the time-space diagrams). Note the systemic behavioral changes.</p>
+      <p>Time-space diagrams are useful for capturing the behavior of vehicles across time. In these diagrams, each curve denotes a separate vehicle, bolded curves denote centrally coordinated AVs, and steeper curve indicate higher vehicle speed (more desirable). One can see that control by a DRL-trained policy significantly improves the average vehicle speed in the system.</p>
+        <table class="table table-bordered">
+  <thead>
+    <tr class="table-dark">
+      <th scope="col">Time-space Diagram</th>
+      <th scope="col">Video</th>
+      <th scope="col">Generalization</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-active">
+    <td scope="row" colspan="3"><b>Single Ring System.</b> Note the automatically learned stabilization behavior.</td>
+    </tr>
+    <tr>
+      <th scope="row"><img src="img/ring_timespace.jpg"  class="img-fluid" alt="..." style="width:150%"></th>
+      <td>
+        <video width="250" controls autoplay>
+            <source src="img/single_ring.mov" type="video/mp4">
+        </video>
+        <!-- <img src="img/single_ring.mov"  class="img-fluid d-block mx-auto" alt="..." style="max-width:50%"> -->
+      </td>
+      <td><img src="img/ring_speed_v2.jpg"  class="img-fluid" alt="..." style="width:150%"></td>
+    </tr>
+
+    <tr class="table-active">
+      <td scope="row" colspan="3"><b>Double Ring System.</b> Note the learned stabilization behavior (both lanes for Global objective, AV's own lane for Greedy objective).</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        Global Objective
+        <br>
+        <img src="img/double_ring_global_timespace.jpg"  class="img-fluid" alt="...">
+        <br>
+        Greedy Objective
+        <br>
+        <img src="img/double_ring_greedy_timespace.jpg"  class="img-fluid" alt="...">
+        <br>
+      </th>
+      <td>
+        <br>
+        <br>
+        <br>
+        <video width="250" controls autoplay>
+          <source src="img/double_ring_global.mov" type="video/mp4">
+        </video>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <video width="250" controls autoplay>
+          <source src="img/double_ring_greedy.mov" type="video/mp4">
+        </video>
+        <br>
+      </td>
+      <td><img src="img/double_ring_speed_v2.jpg"  class="img-fluid" alt="..."></td>
+    </tr>
+
+    <tr class="table-active">
+      <td scope="row" colspan="3"><b>Figure Eight System.</b> Note the learned snaking behavior without braking.</td>
+    </tr>
+    <tr>
+      <th scope="row"><img src="img/figure_eight_timespace.jpg"  class="img-fluid" alt="..." style="width:150%"></th>
+      <td>
+        <video width="250" controls autoplay>
+            <source src="img/figure_eight.mov" type="video/mp4">
+        </video>
+      </td>
+      <td><img src="img/figure_eight_speed_v2.jpg"  class="img-fluid" alt="..." style="width:150%"></td>
+    </tr>
+
+    <tr class="table-active">
+      <td scope="row" colspan="3"><b>Highway Bottleneck System.</b> Note the automatically learned alternating behavior at merges.</td>
+    </tr>
+    <tr>
+      <td scope="row" colspan="3"><b><video width="1300" controls autoplay><source src="img/highway_bottleneck.mov" type="video/mp4"></video></b></td>
+    </tr>
+    <tr>
+      <th scope="row"><img src="img/bottleneck_2400_timespace.jpg"  class="img-fluid" alt="..."></th>
+      <td></td>
+      <td><img src="img/bottleneck_outflow_v2.jpg"  class="img-fluid" alt="..." style="width:150%"></td>
+    </tr>
+
+    <tr class="table-active">
+      <td scope="row" colspan="3"><b>Highway Ramp System.</b> Note the highway vehicle's automatic upstream rate-limiting behavior.</td>
+    </tr>
+    <tr>
+      <td scope="row" colspan="3"><b><video width="1300" controls autoplay><source src="img/highway_ramp.mov" type="video/mp4"></video></b></td>
+    </tr>
+    <tr>
+      <th scope="row"><img src="img/ramp_timespace.jpg"  class="img-fluid" alt="..."></th>
+      <td></td>
+      <td><img src="img/ramp_outflow_v2.jpg"  class="img-fluid" alt="..." style="width:150%"></td>
+    </tr>
+
+    <tr class="table-active">
+      <td scope="row" colspan="3"><b>Intersection System.</b> Note the automatically learned platooning and alternating behaviors.</td>
+    </tr>
+    <tr>
+      <th scope="row"><img src="img/intersection_timespace.jpg"  class="img-fluid" alt="..."></th>
+      <td>
+        <video width="300" controls autoplay>
+          <source src="img/intersection.mov" type="video/mp4">
+        </video>
+      </td>
+      <td><img src="img/intersection_outflow_v2.jpg"  class="img-fluid" alt="..." style="width:150%"></td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+    </div>
+  </div>
+
+  <div class="album py-5 bg-light">
+  <div class="container">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h3>Acknowledgement</h3><br>
+<p>The authors acknowledge MIT SuperCloud and Lincoln Laboratory Supercomputing Center for providing computational resources supporting the research results in this paper. This research was partially supported by Amazon, MIT-IBM Watson AI Lab, and the Department of Transportation Dwight David Eisenhower Transportation Fellowship Program. The authors are grateful for the constructive suggestions by all reviewers and editors.</p>
+      </div>
+    </div>
+  </div>
+  </section>
+
+</main>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
