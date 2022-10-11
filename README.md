@@ -2,7 +2,7 @@
 This repo contains the code, model checkpoints, and video results for our IEEE T-ASE (presented at IROS 2022) paper *Unified Automatic Control of Vehicular Systems with Reinforcement Learning*.
 
 # Relevant Links
-You may find this project at: Project Website, [IEEE Website](https://ieeexplore.ieee.org/document/9765650), [arXiv](https://arxiv.org/abs/2208.00268).
+You may find this project at: [Project Website](https://mit-wu-lab.github.io/automatic_vehicular_control), [IEEE Website](https://ieeexplore.ieee.org/document/9765650), [arXiv](https://arxiv.org/abs/2208.00268).
 
 ```
 @article{yan2022unified,
