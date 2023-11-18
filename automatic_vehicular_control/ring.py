@@ -84,7 +84,7 @@ class RingEnv(Env):
                 ts.accel(rl, accel / (c.n_actions - 1))
             elif c.act_type == 'accel':
                 if c.norm_action:
-                    accel = (level * 2 - 1) * (c.max_accel if accel > 0.5 else c.max_decel)
+                    accel = (aceel * 2 - 1) * (c.max_accel if accel > 0.5 else c.max_decel)
                 ts.accel(rl, accel)
             else:
                 if c.act_type == 'continuous':
